@@ -21,42 +21,42 @@ public:
 	}
 	~Vec3() {
 	}
-	Vec3 operator +(const Vec3 num) {
+	Vec3 operator +(const Vec3 vector) {
 		Vec3 result = {
-			_x + num._x,
-			_y + num._y,
-			_z + num._z
+			_x + vector._x,
+			_y + vector._y,
+			_z + vector._z
 		};
 		return result;
 	}
-	Vec3 operator -(const Vec3 num) {
+	Vec3 operator -(const Vec3 vector) {
 		Vec3 result = {
-			_x - num._x,
-			_y - num._y,
-			_z - num._z
+			_x - vector._x,
+			_y - vector._y,
+			_z - vector._z
 		};
 		return result;
 	}
-	Vec3& operator +=(const Vec3 num) {
-		_x += num._x;
-		_y += num._y;
-		_z += num._z;
+	Vec3& operator +=(const Vec3 vector) {
+		_x += vector._x;
+		_y += vector._y;
+		_z += vector._z;
 		return *this;
 	}
-	Vec3& operator -=(const Vec3 num) {
-		_x -= num._x;
-		_y -= num._y;
-		_z -= num._z;
+	Vec3& operator -=(const Vec3 vector) {
+		_x -= vector._x;
+		_y -= vector._y;
+		_z -= vector._z;
 		return *this;
 	}
-	Vec3 operator =(const Vec3 num) {
-		_x = num._x;
-		_y = num._y;
-		_z = num._z;
+	Vec3& operator =(const Vec3 vector) {
+		_x = vector._x;
+		_y = vector._y;
+		_z = vector._z;
 		return *this;
 	}
-	bool operator ==(const Vec3 num) {
-		return (_x == num.x && _y = num.y && _z = num.z);
+	bool operator ==(const Vec3 vector) {
+		return (_x == vector.x && _y = vector.y && _z = vector.z);
 	}
 
 	Vec3<float> Normalise() {
@@ -80,8 +80,8 @@ public:
 	bool isZero() {
 		return this == (0, 0, 0);
 	}
-	float distanceTo(const Vec3 num) {
-		Vec3 sub = *this - num;
+	float distanceTo(const Vec3 vector) {
+		Vec3 sub = *this - vector;
 		float module = sqrt(sub._x*sub._x + sub._y*sub._y + sub._z*sub._z);
 		return module;
 	}
