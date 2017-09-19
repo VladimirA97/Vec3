@@ -56,7 +56,7 @@ public:
 		return *this;
 	}
 	bool operator ==(const Vec3 vector) {
-		return (_x == vector.x && _y = vector.y && _z = vector.z);
+		return (_x == vector._x && _y == vector._y && _z == vector._z);
 	}
 
 	Vec3<float> Normalise() {
